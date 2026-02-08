@@ -1,3 +1,4 @@
+import Container from "./Container";
 import { ChakraProvider } from "./Provider";
 import TopHeader from "./TopHeader";
 import { nunito } from "./ui/fonts";
@@ -12,7 +13,7 @@ export default function RootLayout({
       <body className={nunito.className}>
         <ChakraProvider>
           <TopHeader />
-          {children}
+          <Container>{children}</Container>
         </ChakraProvider>
       </body>
     </html>
