@@ -28,9 +28,13 @@ const SignInForm = () => {
 
   const onSubmit = handleSubmit(async (data) => {
     console.log(data);
-    const response = await signInService.post<SignInData>(data);
-    console.log(response);
-     redirect("/");
+    try {
+      const response = await signInService.post<SignInData>(data);
+      console.log(response);
+      redirect("/");
+    } catch (error) {
+      console.error(error);
+    }
   });
 
   return (

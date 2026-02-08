@@ -19,21 +19,18 @@ async function apiFetch<T>(
     url.searchParams.append(key, String(value));
   });
 
-  try {
-    // set options and fetch data
-    const response = await fetch(url.toString(), {
-      method,
-      headers: {
-        "Content-Type": "application/json",
-        ...headers,
-      },
-      body: body ? JSON.stringify(body) : undefined,
-    });
+  // set options and fetch data
+  const response = await fetch(url.toString(), {
+    method,
+    headers: {
+      "Content-Type": "application/json",
+      ...headers,
+    },
+    body: body ? JSON.stringify(body) : undefined,
+  });
 
-    return response.json();
-  } catch (error) {
-    throw new Error(`API error`);
-  }
+  if (!response.ok) throw new Error(`API error ${response.status}`);
+  return response.json();
 }
 
 export class ApiClient<T> {
