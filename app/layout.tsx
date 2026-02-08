@@ -1,5 +1,5 @@
 import LayoutContainer from "./ui/LayoutContainer";
-import { ChakraProvider } from "./Provider";
+import { ChakraProvider } from "./ui/Provider";
 import TopHeader from "./ui/TopHeader";
 import { nunito } from "./ui/fonts";
 
