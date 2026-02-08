@@ -1,6 +1,6 @@
 import { HStack } from "@chakra-ui/react";
 
-const Container = ({ children }: { children: React.ReactNode }) => {
+const LayoutContainer = ({ children }: { children: React.ReactNode }) => {
   return (
     <HStack
       h={"714px"}
@@ -13,4 +13,4 @@ const Container = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default Container;
+export default LayoutContainer;
