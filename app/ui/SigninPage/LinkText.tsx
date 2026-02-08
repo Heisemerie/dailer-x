@@ -1,12 +1,13 @@
 import { Text } from "@chakra-ui/react";
 import { manrope } from "../fonts";
+import Link from "next/link";
 
 interface Props {
   children: string;
-  textAlign?: "right"
+  textAlign?: "right";
 }
 
-const LinkText = ({ children,textAlign }: Props) => {
+const LinkText = ({ children, textAlign }: Props) => {
   return (
     <Text
       className={manrope.className}
@@ -20,7 +21,7 @@ const LinkText = ({ children,textAlign }: Props) => {
       letterSpacing={"-0.1px"}
       textDecorationThickness={"0%"}
     >
-      {children}
+      <Link href={"/"}>{children}</Link>
     </Text>
   );
 };
