@@ -1,11 +1,10 @@
 import { Text } from "@chakra-ui/react";
 
-const Header = () => {
+const SignInHeader = () => {
   return (
     <>
       <Text
         fontWeight={"700px"}
-        fontStyle={"Bold"}
         fontSize={"40px"}
         lineHeight={"47.42px"}
         letterSpacing={"-2%"}
@@ -18,7 +17,7 @@ const Header = () => {
         Sign In
       </Text>
       <Text
-        fontWeight={"400px"}
+        fontWeight={"400"}
         fontSize={"16px"}
         lineHeight={"21.56px"}
         letterSpacing={"0px"}
@@ -34,4 +33,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default SignInHeader;
