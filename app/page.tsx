@@ -1,4 +1,6 @@
 import { HStack } from "@chakra-ui/react";
+import ConfigSteps from "./ui/CampaignPage/ConfigSteps";
+import CampaignConfigs from "./ui/CampaignPage/CampaignConfigs";
 
 const page = () => {
   return (
@@ -10,7 +12,8 @@ const page = () => {
       marginY={"72px"}
       marginX={"auto"}
     >
-      page
+      <ConfigSteps />
+      <CampaignConfigs />
     </HStack>
   );
 };
