@@ -1,6 +1,6 @@
-import Container from "./Container";
+import Container from "./ui/Container";
 import { ChakraProvider } from "./Provider";
-import TopHeader from "./TopHeader";
+import TopHeader from "./ui/TopHeader";
 import { nunito } from "./ui/fonts";
 
 export default function RootLayout({
