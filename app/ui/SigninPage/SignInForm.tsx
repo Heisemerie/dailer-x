@@ -15,27 +15,30 @@ import { GoogleIcon } from "./GoogleIcon";
 import LinkText from "./LinkText";
 import SignInButton from "./SignInButton";
 import SeparatorText from "./SeparatorText";
-
-interface FormValues {
-  username: string;
-  password: string;
-}
+import { SignInData } from "../../lib/definitions";
+import { signInService } from "../../lib/actions";
+import { redirect } from "next/navigation";
 
 const SignInForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm<FormValues>();
+    formState: { errors, isValid },
+  } = useForm<SignInData>();
 
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const onSubmit = handleSubmit(async (data) => {
+    console.log(data);
+    const response = await signInService.post<SignInData>(data);
+    console.log(response);
+     redirect("/");
+  });
 
   return (
     <Box w={"full"}>
       <form onSubmit={onSubmit}>
         <Stack gap="4" align="flex-start">
           <Field.Root
-            invalid={!!errors.username}
+            invalid={!!errors.login}
             h={"84px"}
             gap={"10px"}
             w={"490px"}
@@ -51,14 +54,14 @@ const SignInForm = () => {
               Email Address/Username *
             </Field.Label>
             <Input
-              {...register("username")}
+              {...register("login")}
               placeholder="Enter email address"
               h={"50px"}
               borderRadius={"7px"}
               borderWidth={"2px"}
               borderColor={"#292929"}
             />
-            <Field.ErrorText>{errors.username?.message}</Field.ErrorText>
+            <Field.ErrorText>{errors.login?.message}</Field.ErrorText>
           </Field.Root>
 
           <Field.Root
