@@ -3,12 +3,11 @@ import { HStack } from "@chakra-ui/react";
 const Container = ({ children }: { children: React.ReactNode }) => {
   return (
     <HStack
-      h={"553px"}
-      w={"1130px"}
-      align={"top"}
+      h={"714px"}
+      w={"full"}
+      alignItems={"center"}
       gap={"24px"}
-      marginY={"72px"}
-      marginX={"auto"}
+      bg={'green'}
     >
       {children}
     </HStack>
