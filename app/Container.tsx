@@ -7,7 +7,6 @@ const Container = ({ children }: { children: React.ReactNode }) => {
       w={"full"}
       alignItems={"center"}
       gap={"24px"}
-      bg={'green'}
     >
       {children}
     </HStack>

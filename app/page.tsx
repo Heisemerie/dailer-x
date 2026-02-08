@@ -5,14 +5,7 @@ import { JSX } from "react";
 
 const CampaignPage = (): JSX.Element => {
   return (
-    <HStack
-      h={"553px"}
-      w={"1130px"}
-      align={"top"}
-      gap={"24px"}
-      margin={"auto"}
-      bg={"green"}
-    >
+    <HStack h={"553px"} w={"1130px"} align={"top"} gap={"24px"} margin={"auto"}>
       <ConfigSteps />
       <CampaignConfigs />
     </HStack>
