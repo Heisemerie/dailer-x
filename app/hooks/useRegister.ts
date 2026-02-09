@@ -10,9 +10,10 @@ const useRegister = async (data: RegisterData) => {
       is_forever_free: "true",
     });
     console.log(response); // save the response in state/local storage
-    return response;
+    return { data: response };
   } catch (error) {
     console.error(error);
+    return { error };
   }
 };
 

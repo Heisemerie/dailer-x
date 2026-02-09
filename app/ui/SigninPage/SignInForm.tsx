@@ -28,7 +28,7 @@ const SignInForm = () => {
 
   const onSubmit = handleSubmit(async (data) => {
     console.log(data);
-    const user = await useSignIn(data);
+    const { data: user, error } = await useSignIn(data);
     redirect("/");
   });
 
