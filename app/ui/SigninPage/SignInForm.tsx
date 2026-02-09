@@ -16,8 +16,8 @@ import LinkText from "./LinkText";
 import SignInButton from "./SignInButton";
 import SeparatorText from "./SeparatorText";
 import { SignInData } from "../../lib/definitions";
-import { signInService } from "../../lib/actions";
 import { redirect } from "next/navigation";
+import useSignIn from "../../hooks/useSignIn";
 
 const SignInForm = () => {
   const {
@@ -28,13 +28,8 @@ const SignInForm = () => {
 
   const onSubmit = handleSubmit(async (data) => {
     console.log(data);
-    try {
-      const response = await signInService.post(JSON.stringify(data));
-      console.log(response);
-      redirect("/");
-    } catch (error) {
-      console.error(error);
-    }
+    const user = await useSignIn(data);
+    redirect("/");
   });
 
   return (
