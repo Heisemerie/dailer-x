@@ -9,112 +9,87 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { redirect } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { PasswordInput } from "../../../components/ui/password-input";
+import useSignIn from "../../hooks/useSignIn";
+import { SignInData } from "../../lib/definitions";
 import { GoogleIcon } from "./GoogleIcon";
 import LinkText from "./LinkText";
-import SignInButton from "./SignInButton";
 import SeparatorText from "./SeparatorText";
-import { SignInData } from "../../lib/definitions";
-import { redirect } from "next/navigation";
-import useSignIn from "../../hooks/useSignIn";
+import SignInButton from "./SignInButton";
 
 const SignInForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<SignInData>();
 
   const onSubmit = handleSubmit(async (data) => {
-    console.log(data);
     const { data: user, error } = await useSignIn(data);
     redirect("/");
   });
 
   return (
-    <Box w={"full"}>
-      <form onSubmit={onSubmit}>
-        <Stack gap="4" align="flex-start">
-          <Field.Root
-            invalid={!!errors.login}
-            h={"84px"}
-            gap={"10px"}
-            w={"490px"}
-          >
-            <Field.Label
-              w={"170px"}
-              h={"24px"}
-              gap={"4px"}
-              fontWeight={"400px"}
-              lineHeight={"24px"}
-              letterSpacing={"-0.11px"}
-            >
+    <Box w="full">
+      <form onSubmit={onSubmit} style={{ width: "100%" }}>
+        <Stack gap="3" align="flex-start" w="full">
+          {/* Email Field */}
+          <Field.Root invalid={!!errors.login} w="full">
+            <Field.Label fontWeight="400" fontSize="sm" mb="1">
               Email Address/Username *
             </Field.Label>
             <Input
               {...register("login")}
               placeholder="Enter email address"
-              h={"50px"}
-              borderRadius={"7px"}
-              borderWidth={"2px"}
-              borderColor={"#292929"}
+              h="45px"
+              borderRadius="7px"
+              borderWidth="2px"
+              borderColor="#292929"
             />
             <Field.ErrorText>{errors.login?.message}</Field.ErrorText>
           </Field.Root>
 
-          <Field.Root
-            invalid={!!errors.password}
-            h={"84px"}
-            gap={"10px"}
-            w={"490px"}
-          >
-            <Field.Label
-              w={"170px"}
-              h={"24px"}
-              gap={"4px"}
-              fontWeight={"400px"}
-              lineHeight={"24px"}
-              letterSpacing={"-0.11px"}
-            >
+          {/* Password Field */}
+          <Field.Root invalid={!!errors.password} w="full">
+            <Field.Label fontWeight="400" fontSize="sm" mb="1">
               Password *
             </Field.Label>
             <PasswordInput
               {...register("password")}
               placeholder="Enter password"
-              h={"50px"}
-              borderRadius={"7px"}
-              borderWidth={"2px"}
-              borderColor={"#292929"}
+              h="45px"
+              borderRadius="7px"
+              borderWidth="2px"
+              borderColor="#292929"
             />
             <Field.ErrorText>{errors.password?.message}</Field.ErrorText>
           </Field.Root>
 
-          <VStack h={"94px"} gap={"20px"}>
-            <LinkText textAlign="right">Forgot Password?</LinkText>
+          {/* Buttons Area */}
+          <VStack gap="3" w="full" pt="1">
+            <Box w="full" textAlign="right">
+              <LinkText>Forgot Password?</LinkText>
+            </Box>
+
             <SignInButton type="submit">Sign In</SignInButton>
+
             <SeparatorText />
+
             <SignInButton>
-              <GoogleIcon w={"23.24px"} h={"23.71px"} />
-              <Text
-                fontWeight={"600"}
-                fontSize={"16.17px"}
-                lineHeight={"23.71px"}
-                letterSpacing={"0px"}
-              >
+              <GoogleIcon w="20px" h="20px" />
+              <Text fontSize="14px" fontWeight="600">
                 Sign In With Google
               </Text>
             </SignInButton>
 
-            <HStack w={"288px"} h={"26px"} alignItems={"center"}>
+            <HStack alignItems="center" w="full" gap="1">
               <Text
-                fontWeight={"400"}
-                fontSize={"16px"}
-                lineHeight={"25.87px"}
-                letterSpacing={"-0.11px"}
-                color={"#8E9BAE"}
-                flexShrink="0"
-                marginLeft={"43.5px"}
+                fontSize="16px"
+                color="#8E9BAE"
+                flex={2}
+                textAlign={"right"}
               >
                 Don’t have an account?
               </Text>

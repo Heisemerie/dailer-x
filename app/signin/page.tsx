@@ -1,13 +1,38 @@
-import SignInHeader from "../ui/SigninPage/SignInHeader";
+import { Box, VStack } from "@chakra-ui/react";
+import NextImage from "next/image";
+import Container from "../ui/SigninPage/Container";
 import SignInForm from "../ui/SigninPage/SignInForm";
-import { VStack } from "@chakra-ui/react";
+import SignInHeader from "../ui/SigninPage/SignInHeader";
 
 const SigninPage = () => {
   return (
-    <VStack w={"490px"} h={"548.8px"} gap={"15px"} marginX={"auto"}>
-      <SignInHeader />
-      <SignInForm />
-    </VStack>
+    <Container>
+      <Box
+        position="relative"
+        h="full"
+        flex={0.6}
+        hideBelow="md"
+        aspectRatio={354 / 323}
+      >
+        <NextImage
+          src="/max.svg"
+          alt="Maximise"
+          fill
+          style={{ objectFit: "contain" }}
+        />
+      </Box>
+
+      <VStack
+        h="full"
+        flex={0.4}
+        justify="center"
+        gap="6"
+        padding="16px"
+      >
+        <SignInHeader />
+        <SignInForm />
+      </VStack>
+    </Container>
   );
 };
 
