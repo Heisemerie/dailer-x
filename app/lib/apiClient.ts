@@ -49,8 +49,8 @@ export class ApiClient<T> {
     return apiFetch<T>(`${this.endpoint}/${id}`);
   };
 
-  post = (body: BodyInit) => {
-    return apiFetch<T>(this.endpoint, { method: "POST", body });
+  post = (body: BodyInit, params?: Record<string, string | number>) => {
+    return apiFetch<T>(this.endpoint, { method: "POST", body, params });
   };
 
   update = (id: number | string, body: BodyInit) => {
