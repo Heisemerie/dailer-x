@@ -1,6 +1,4 @@
-import LayoutContainer from "./ui/LayoutContainer";
 import { ChakraProvider } from "./ui/Provider";
-import TopHeader from "./ui/TopHeader";
 import { nunito } from "./ui/fonts";
 
 interface Props {
@@ -11,10 +9,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
   return (
     <html lang="en">
       <body className={nunito.className}>
-        <ChakraProvider>
-          <TopHeader />
-          <LayoutContainer>{children}</LayoutContainer>
-        </ChakraProvider>
+        <ChakraProvider>{children}</ChakraProvider>
       </body>
     </html>
   );
