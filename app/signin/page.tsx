@@ -1,9 +1,9 @@
 import { Box, VStack } from "@chakra-ui/react";
 import NextImage from "next/image";
-import Container from "../ui/SigninPage/Container";
-import SignInForm from "../ui/SigninPage/SignInForm";
-import SignInHeader from "../ui/SigninPage/SignInHeader";
-import NetworkHeader from "../ui/SigninPage/NetworkHeader";
+import Container from "../ui/signin/Container";
+import SignInForm from "../ui/signin/SignInForm";
+import SignInHeader from "../ui/signin/SignInHeader";
+import NetworkHeader from "../ui/signin/NetworkHeader";
 
 const SigninPage = () => {
   return (

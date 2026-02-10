@@ -1,9 +1,9 @@
 import { HStack } from "@chakra-ui/react";
-import CampaignConfigs from "./ui/CampaignPage/CampaignConfigs";
-import ConfigSteps from "./ui/CampaignPage/ConfigSteps";
+import CampaignConfigs from "./ui/campaign/CampaignConfigs";
+import ConfigSteps from "./ui/campaign/ConfigSteps";
 import { JSX } from "react";
-import TopHeader from "./ui/CampaignPage/TopHeader";
-import Container from "./ui/CampaignPage/Container";
+import TopHeader from "./ui/campaign/TopHeader";
+import Container from "./ui/campaign/Container";
 
 const CampaignPage = (): JSX.Element => {
   return (
