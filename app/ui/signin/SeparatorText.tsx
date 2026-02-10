@@ -2,7 +2,7 @@ import { HStack, Separator, Text } from "@chakra-ui/react";
 
 const SeparatorText = () => {
   return (
-    <HStack>
+    <HStack w={"full"}>
       <Separator flex="1" variant="solid" size="md" />
       <Text
         flexShrink="0"
