@@ -4,11 +4,11 @@ import React from "react";
 const Container = ({ children }: { children: React.ReactNode }) => {
   return (
     <HStack
-      h={{base:"100vh", md:"full"}}
+      h={{ base: "100vh", md: "full" }}
       w={"full"}
       paddingY={"37px"}
       paddingX={{ base: "16px", md: "47px" }}
-      gap={"16px"}
+      gap={"48px"}
     >
       {children}
     </HStack>
