@@ -3,6 +3,7 @@ import NextImage from "next/image";
 import Container from "../ui/SigninPage/Container";
 import SignInForm from "../ui/SigninPage/SignInForm";
 import SignInHeader from "../ui/SigninPage/SignInHeader";
+import NetworkHeader from "../ui/SigninPage/NetworkHeader";
 
 const SigninPage = () => {
   return (
@@ -22,8 +23,10 @@ const SigninPage = () => {
         flex={{ base: 1, md: 0.4 }}
         maxW={{ mdToXl: "490px" }}
         maxH={{ mdToXl: "548.8px" }}
+        h={{ base: "full" }}
         gap={"16px"}
       >
+        <NetworkHeader />
         <SignInHeader />
         <SignInForm />
       </VStack>
