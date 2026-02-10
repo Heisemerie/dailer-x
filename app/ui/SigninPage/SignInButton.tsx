@@ -10,7 +10,7 @@ const SignInButton = ({ children, type }: Props) => {
     <Button
       type={type}
       w={"full"}
-      h={"50px"}
+      maxH={"50px"}
       bg={"#272729"}
       borderRadius={"7px"}
       paddingY={"12.93px"}

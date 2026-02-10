@@ -11,7 +11,6 @@ const LinkText = ({ children, textAlign }: Props) => {
   return (
     <Text
       className={manrope.className}
-      flex={1}
       color={"#1C86FF"}
       textDecoration={"underline"}
       textAlign={textAlign}

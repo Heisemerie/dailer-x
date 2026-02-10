@@ -9,25 +9,18 @@ const SigninPage = () => {
     <Container>
       <Box
         position="relative"
-        h="full"
         flex={0.6}
         hideBelow="md"
         aspectRatio={354 / 323}
       >
-        <NextImage
-          src="/max.svg"
-          alt="Maximise"
-          fill
-          style={{ objectFit: "contain" }}
-        />
+        <NextImage src="/max.svg" alt="Maximise" fill />
       </Box>
 
       <VStack
-        h="full"
-        flex={0.4}
-        justify="center"
-        gap="6"
-        padding="16px"
+        flex={{ base: 1, md: 0.4 }}
+        maxW={{ mdToXl: "490px" }}
+        maxH={{ mdToXl: "548.8px" }}
+        gap={"16px"}
       >
         <SignInHeader />
         <SignInForm />

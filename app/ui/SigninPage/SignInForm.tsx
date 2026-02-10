@@ -32,44 +32,44 @@ const SignInForm = () => {
   });
 
   return (
-    <Box w="full">
+    <Box w={"full"}>
       <form onSubmit={onSubmit} style={{ width: "100%" }}>
-        <Stack gap="3" align="flex-start" w="full">
+        <Stack gap={4} w={"full"}>
           {/* Email Field */}
-          <Field.Root invalid={!!errors.login} w="full">
-            <Field.Label fontWeight="400" fontSize="sm" mb="1">
+          <Field.Root invalid={!!errors.login} w={"full"}>
+            <Field.Label fontWeight={"400"} fontSize={"14px"}>
               Email Address/Username *
             </Field.Label>
             <Input
               {...register("login")}
               placeholder="Enter email address"
-              h="45px"
-              borderRadius="7px"
-              borderWidth="2px"
+              maxH={"45px"}
+              borderRadius={"7px"}
+              borderWidth={"2px"}
               borderColor="#292929"
             />
             <Field.ErrorText>{errors.login?.message}</Field.ErrorText>
           </Field.Root>
 
           {/* Password Field */}
-          <Field.Root invalid={!!errors.password} w="full">
-            <Field.Label fontWeight="400" fontSize="sm" mb="1">
+          <Field.Root invalid={!!errors.password} w={"full"}>
+            <Field.Label fontWeight={"400"} fontSize={"14px"}>
               Password *
             </Field.Label>
             <PasswordInput
               {...register("password")}
               placeholder="Enter password"
-              h="45px"
-              borderRadius="7px"
-              borderWidth="2px"
-              borderColor="#292929"
+              maxH={"45px"}
+              borderRadius={"7px"}
+              borderWidth={"2px"}
+              borderColor={"#292929"}
             />
             <Field.ErrorText>{errors.password?.message}</Field.ErrorText>
           </Field.Root>
 
           {/* Buttons Area */}
-          <VStack gap="3" w="full" pt="1">
-            <Box w="full" textAlign="right">
+          <VStack w={"full"}>
+            <Box w={"full"} textAlign={"right"}>
               <LinkText>Forgot Password?</LinkText>
             </Box>
 
@@ -78,15 +78,15 @@ const SignInForm = () => {
             <SeparatorText />
 
             <SignInButton>
-              <GoogleIcon w="20px" h="20px" />
-              <Text fontSize="14px" fontWeight="600">
+              <GoogleIcon maxW={"20px"} maxH={"20px"} />
+              <Text fontSize={"14px"} fontWeight={"600"}>
                 Sign In With Google
               </Text>
             </SignInButton>
 
-            <HStack alignItems="center" w="full" gap="1">
+            <HStack alignItems={"center"} maxW={"288px"}>
               <Text
-                fontSize="16px"
+                fontSize={"16px"}
                 color="#8E9BAE"
                 flex={2}
                 textAlign={"right"}
