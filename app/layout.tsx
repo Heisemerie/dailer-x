@@ -1,4 +1,4 @@
-import { ChakraProvider } from "./ui/Provider";
+import { Provider } from "./ui/Provider";
 import { nunito } from "./ui/fonts";
 import { ColorModeProvider } from "../components/ui/color-mode";
 
@@ -10,9 +10,9 @@ export default function RootLayout({ children }: Readonly<Props>) {
   return (
     <html lang="en">
       <body className={nunito.className}>
-        <ChakraProvider>
+        <Provider>
           <ColorModeProvider forcedTheme="dark">{children}</ColorModeProvider>
-        </ChakraProvider>
+        </Provider>
       </body>
     </html>
   );
