@@ -1,17 +1,20 @@
 import { HStack } from "@chakra-ui/react";
 import React from "react";
+import { ColorModeProvider } from "../../../components/ui/color-mode";
 
 const Container = ({ children }: { children: React.ReactNode }) => {
   return (
-    <HStack
-      h={{ base: "100vh", md: "full" }}
-      w={"full"}
-      paddingY={"37px"}
-      paddingX={{ base: "16px", md: "47px" }}
-      gap={"48px"}
-    >
-      {children}
-    </HStack>
+    <ColorModeProvider forcedTheme="dark">
+      <HStack
+        h={{ base: "100vh", md: "full" }}
+        w={"full"}
+        paddingY={"37px"}
+        paddingX={{ base: "16px", md: "47px" }}
+        gap={"48px"}
+      >
+        {children}
+      </HStack>
+    </ColorModeProvider>
   );
 };
 

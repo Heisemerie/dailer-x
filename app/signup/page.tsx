@@ -1,7 +1,12 @@
 import React from "react";
+import { ColorModeProvider } from "../../components/ui/color-mode";
 
 const SignUpPage = () => {
-  return <div>SignUpPage</div>;
+  return (
+    <ColorModeProvider forcedTheme="dark">
+      <div>SignUpPage</div>
+    </ColorModeProvider>
+  );
 };
 
 export default SignUpPage;
