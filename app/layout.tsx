@@ -11,7 +11,9 @@ export default function RootLayout({ children }: Readonly<Props>) {
     <html lang="en">
       <body className={nunito.className}>
         <Provider>
-          <ColorModeProvider forcedTheme="dark">{children}</ColorModeProvider>
+          <ColorModeProvider defaultTheme="dark" forcedTheme="dark">
+            {children}
+          </ColorModeProvider>
         </Provider>
       </body>
     </html>
